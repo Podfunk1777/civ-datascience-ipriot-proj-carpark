@@ -21,6 +21,7 @@ class TestParkingLot(unittest.TestCase):
         self.assertEqual(parking_lot.available_spaces, 1)
 
     def test_duplicate_license_plates(self):
+        #Test case to see if carpark manger can handle duplicate license plates in some way
         parking_lot = carpark_manager.CarparkManger()
         parking_lot.incoming_car("TEST")
         parking_lot.incoming_car("TEST")
