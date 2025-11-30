@@ -10,7 +10,7 @@ import time
 import tkinter as tk
 from typing import Iterable
 #TODO: replace this module with yours
-import mocks
+import carpark_manager
 
 # ------------------------------------------------------------------------------------#
 # You don't need to understand how to implement this class.                           #
@@ -97,7 +97,7 @@ class CarParkDisplay:
     def update_display(self):
         field_values = dict(zip(CarParkDisplay.fields, [
             f'{self._provider.available_spaces:03d}',
-            f'{self._provider.temperature:02d}℃',
+            f'{self._provider.temperature:02}℃',
             time.strftime("%H:%M:%S",self._provider.current_time)
         ]))
         self.window.update(field_values)
@@ -173,15 +173,14 @@ class CarDetectorWindow:
 if __name__ == '__main__':
     root = tk.Tk()
 
-    #TODO: This is my dodgy mockup. Replace it with a good one!
-    mock=mocks.MockCarparkManager()
+    carpark=carpark_manager.CarparkManger()
 
     display=CarParkDisplay(root)
     #TODO: Set the display to use your data source
-    display.data_provider=mock
+    display.data_provider=carpark
 
     detector=CarDetectorWindow(root)
     #TODO: Attach your event listener
-    detector.add_listener(mock)
+    detector.add_listener(carpark)
 
     root.mainloop()
