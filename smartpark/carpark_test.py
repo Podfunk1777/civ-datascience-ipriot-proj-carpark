@@ -20,5 +20,12 @@ class TestParkingLot(unittest.TestCase):
         parking_lot.outgoing_car("1")
         self.assertEqual(parking_lot.available_spaces, 1)
 
+    def test_duplicate_license_plates(self):
+        parking_lot = carpark_manager.CarparkManger()
+        parking_lot.incoming_car("TEST")
+        parking_lot.incoming_car("TEST")
+        parking_lot.outgoing_car("TEST")
+        self.assertEqual(parking_lot.available_spaces, 129)
+
 if __name__ == '__main__':
     unittest.main()
