@@ -54,7 +54,7 @@ class CarparkManger(CarparkSensorListener, CarparkDataProvider):
 
     #Current known issues: will delete all entries of duplicate license plates
 
-    def outgoing_car(self,license_plate):
+    def outgoing_car(self, license_plate):
         '''Logs outgoing cars and at what time. Deletes record of car when called.
 
         Params
@@ -62,13 +62,13 @@ class CarparkManger(CarparkSensorListener, CarparkDataProvider):
         license_plate : str
             license plate from sense data
         '''
-        for i in range(len(self.list_of_cars) - 1, -1, -1):
-            if self.list_of_cars[i].LicensePlate == license_plate:
-                self.list_of_cars[i].exit_time = time.asctime(time.localtime())
-                self.log_append(f"Car with licence plate {self.list_of_cars[i].LicensePlate} has left at {self.list_of_cars[i].exit_time}")
-                del self.list_of_cars[i]
-        
-        print('Car out! ' + license_plate)
+        for car in self.list_of_cars:
+            if car.LicensePlate == license_plate:
+                car.exit_time = time.asctime(time.localtime())
+                self.log_append(f"Car with licence plate {car.LicensePlate} has left at {car.exit_time}")
+                self.list_of_cars.remove(car)
+                break
+
 
     def temperature_reading(self, reading):
         '''Thrown together temperature reading thingo that I could spend more time on

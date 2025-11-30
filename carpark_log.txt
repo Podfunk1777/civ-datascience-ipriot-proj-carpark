@@ -1,6 +1,4 @@
 
-Car with license plate TEST1 has entered at Mon Dec  1 06:12:42 2025
-Car with license plate TEST2 has entered at Mon Dec  1 06:12:42 2025
-Car with licence plate TEST1 has left at Mon Dec  1 06:12:42 2025
-Car with licence plate TEST2 has left at Mon Dec  1 06:12:42 2025
-Car with licence plate 1 has left at Mon Dec  1 06:12:42 2025
+Car with license plate PIKEY has entered at Mon Dec  1 06:26:55 2025
+Car with license plate PIKEY has entered at Mon Dec  1 06:27:02 2025
+Car with licence plate PIKEY has left at Mon Dec  1 06:27:03 2025
