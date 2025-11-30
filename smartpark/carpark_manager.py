@@ -52,8 +52,6 @@ class CarparkManger(CarparkSensorListener, CarparkDataProvider):
         
         print('Car in! ' + license_plate)
 
-    #Current known issues: will delete all entries of duplicate license plates
-
     def outgoing_car(self, license_plate):
         '''Logs outgoing cars and at what time. Deletes record of car when called.
 
