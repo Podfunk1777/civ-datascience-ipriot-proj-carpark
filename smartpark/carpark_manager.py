@@ -65,6 +65,8 @@ class CarparkManger(CarparkSensorListener, CarparkDataProvider):
                 car.exit_time = time.asctime(time.localtime())
                 self.log_append(f"Car with licence plate {car.LicensePlate} has left at {car.exit_time}")
                 self.list_of_cars.remove(car)
+
+                print('Car out! ' + license_plate)
                 break
 
 
